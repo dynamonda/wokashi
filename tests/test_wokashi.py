@@ -1,4 +1,5 @@
 import wokashi
+from wokashi.soup import MisoSoup
 
 
 def test_version():
@@ -6,5 +7,6 @@ def test_version():
 
 
 def test_get():
-    content = wokashi.get('https://yahoo.co.jp')
-    assert len(content) > 0
+    soup = wokashi.get('https://yahoo.co.jp')
+    assert soup is not None
+    assert type(soup) == MisoSoup
