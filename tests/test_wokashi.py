@@ -7,6 +7,9 @@ def test_version():
 
 
 def test_get():
-    soup = wokashi.get('https://yahoo.co.jp')
+    target_url = 'https://yahoo.co.jp'
+    soup = wokashi.get(target_url)
+
     assert soup is not None
     assert type(soup) == MisoSoup
+    assert soup.url == target_url

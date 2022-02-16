@@ -10,4 +10,4 @@ def fuga() -> None:
 def get(url: str) -> MisoSoup:
     response: requests.Request = requests.get(url)
     soup = BeautifulSoup(response.content, features='lxml')
-    return MisoSoup(soup)
+    return MisoSoup(soup, url)
