@@ -13,3 +13,5 @@ def test_get():
     assert soup is not None
     assert type(soup) == MisoSoup
     assert soup.url == target_url
+    assert type(soup.title) == str
+    assert soup.title == "Yahoo! JAPAN"
