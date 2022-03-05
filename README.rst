@@ -11,3 +11,13 @@ $ poetry run pytest
 ```
 pip install git+https://github.com/dynamonda/wokashi
 ```
+
+## メモ
+
+### ライブラリの追加
+
+https://cocoatomo.github.io/poetry-ja/basic-usage/
+
+```
+poetry add <package-name>
+```
