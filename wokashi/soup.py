@@ -14,18 +14,13 @@ class MisoSoup:
     def __init__(self, soup: BeautifulSoup, url: str):
         self.soup = soup
         self.url = url
+        self.title_tag: Tag = Tag(soup.title)
 
-        title_tag: BSTag = soup.title
-        # Tagオブジェクトの文字列を取るときには、
-        # tag.stringではなくtag.get_text()を使う
-        # https://maitakeramen.hatenablog.com/entry/2019/09/07/220623
-        self.title: str = title_tag.get_text()
-
-    def search_css(self, selector: str) -> List[BSTag]:
+    def search_css(self, selector: str) -> List[Tag]:
         """
         CSSセレクタを使用して要素を取得する。
         """
         result_set = list()
         for token in self.soup.select(selector):
-            result_set.append(token)
+            result_set.append(Tag(token))
         return result_set
